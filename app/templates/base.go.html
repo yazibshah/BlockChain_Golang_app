@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>{{ .title }}</title>
+</head>
+<body>
+    <div><a href="/index">Home</a></div>
+    <center><h1>{{ .title }}</h1></center>
+    <hr>
+    {{ with .messages }}
+    {{ if . }}
+    <ul>
+    {{ range . }}
+        <li>{{ . }}</li>
+    {{ end }}
+    </ul>
+    {{ end }}
+    {{ end }}
+    {{ block "content" . }}{{ end }}
+</body>
+</html>
